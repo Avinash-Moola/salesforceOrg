@@ -1,0 +1,18 @@
+<template>
+    <template if:true={show}>
+        <lightning-card title="Input Details" >
+            <lightning-input label="Name :" value={name} onchange={nameHandler} ></lightning-input>
+            <lightning-input label="Age :" value={age} onchange={ageHandler}></lightning-input>
+            <lightning-button label="Save" onclick={saveHandler}></lightning-button>
+        </lightning-card>
+        <lightning-accordion-section label="ABCD" ></lightning-accordion-section>
+        
+
+    </template>
+    <template if:false={show}>
+        <lightning-card title="Output Details">
+           <p>Name : {name}</p>
+           <p>Age  : {age}</p>
+        </lightning-card>
+    </template>
+</template>

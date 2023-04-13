@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Accounts" icon-name="standard:account">
+        <template if:true={accounts.data} for:each={accounts.data} for:item="con" for:index="index">
+           <li key={con.Id}>
+                {con.Name}
+           </li>
+        </template>
+        <br>Parent
+    <c-lwc-training text1 = "Hello I am coming from lwcTrainingText">
+
+    </c-lwc-training>
+    </lightning-card>
+    
+</template>

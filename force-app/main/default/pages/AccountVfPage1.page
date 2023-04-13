@@ -1,0 +1,14 @@
+<apex:page standardController="Account" sidebar="false">
+    <apex:pageBlock title="Account View Page">
+    	<apex:pageBlockSection title="Account information">
+			<apex:outputField value="{!Account.Name}"/>
+            <apex:outputField value="{!Account.site}"/>
+            <apex:outputField value="{!Account.Active__c}"/>
+            <apex:outputField value="{!Account.AnnualRevenue}"/>
+            <apex:outputField value="{!Account.NumberOfEmployees}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title=" Website Information">
+			<apex:outputField value="{!Account.Website}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

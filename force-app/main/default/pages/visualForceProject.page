@@ -1,0 +1,46 @@
+<apex:page title="My Page" controller="contactManagementController" action="{!contactManagementController}" lightningStylesheets="true" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Contact Information">
+                
+                    <apex:outputLabel value="Last Name" for="conName"></apex:outputLabel>
+                    <apex:inputText id="conName" value="{!lName}" />
+                    <apex:outputLabel value="Phone"  for="phon"></apex:outputLabel>
+                    <apex:inputText id="phon" value="{!phon}"/>
+                    <apex:commandButton value="Create Contact" action="{!createContact}" reRender="conTable"/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact List" >
+                <apex:pageBlockTable id="conTable" value="{!conList}" var="c" rendered="true">
+                    <apex:column headerValue="First Name"  value="{!c.lastName}" />
+                    <apex:column headerValue="Phone" value="{!c.phone}"/>
+                    <apex:column headerValue="Select" >
+                        <apex:commandLink value="Delete"  action="{!deleteContact}" reRender="conTable">
+                        	<apex:param name="contactId" value="{!c.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+    			<apex:commandButton value="Delete"/>
+            </apex:pageBlockSection>
+    	</apex:pageBlock>
+        
+        
+        <apex:pageBlock >
+                <apex:pageMessages rendered="true" id="msg"/>
+        	<apex:pageBlockSection title="Calculator">
+                <apex:inputText label="Number 1" value="{!number1}"/>
+                <apex:inputText label="Number 2" value="{!number2}"/>
+                <apex:selectList label="Operator" value="{!operator}">
+                	<apex:selectOption itemLabel="+" itemValue="add"></apex:selectOption>
+                    <apex:selectOption itemLabel="-" itemValue="sub"></apex:selectOption>
+                    <apex:selectOption itemLabel="x" itemValue="multi"></apex:selectOption>
+                    <apex:selectOption itemLabel="/" itemValue="divide"></apex:selectOption>
+                </apex:selectList>
+                <apex:outputText id="res" label="Result" value="{!result}" rendered="true"></apex:outputText>
+                <apex:commandButton value="Calculate" action="{!calculate}" reRender="res, msg"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+         
+    </apex:form>
+
+</apex:page>

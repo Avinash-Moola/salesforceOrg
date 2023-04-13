@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Hello" icon-name="standard:brand" class="slds-m-left_x-small" >        
+
+
+        <br>
+        
+        <lightning-button if:true={res} label="Show Me" style="size: 10px5px;" variant="brand" onclick={showHandler} ></lightning-button>
+        <lightning-button if:false={res} label="Hide Me" style="size: 10px5px;" variant="brand" onclick={hideHandler} ></lightning-button>
+        <br>
+        <lightning-formatted-text if:false={res} value={dispText}  style="color: rgb(16, 1, 71);font-family: cursive;"  > </lightning-formatted-text>
+        <br>
+        <ul if:false={res} class ="slds-m-around_medium" >
+            <template for:each={Contacts} for:item="c">
+                <li key={c.ID}>
+                    {c.Title}. {c.Name} 
+                    <br/>
+                </li>
+            </template>
+        </ul>  
+        <template for:each={account}     for:item="a" >
+            <li key={a.id}>
+                Account Name : {a.name} ----> Phone :{a.phone}
+            </li>
+        </template>
+    </lightning-card>
+</template>

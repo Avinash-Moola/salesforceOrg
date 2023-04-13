@@ -1,0 +1,18 @@
+<apex:page controller="calculatorClass" >
+ 	<apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText label="Enter Value " value="{!num}" />
+                <br/>
+                <apex:outputLabel title="Out" value="{!oNum}" id="t1" >
+                    
+                </apex:outputLabel>
+                <br/>
+                <apex:commandButton value="Add"  onclick="addition"  />
+                <apex:commandButton value="Sub" action="{!addition}"  reRender="t1"  />
+            </apex:pageBlockSection>        
+        </apex:pageBlock>
+ 
+    </apex:form>
+
+</apex:page>

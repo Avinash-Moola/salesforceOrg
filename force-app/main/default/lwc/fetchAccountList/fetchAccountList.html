@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Account List" icon-name="standard:Account">
+        <div>
+            <template if:true={accounts}>
+                <template for:each={accounts} for:item="c">
+                    <p key={c.ID}>
+                        {c.lastName} 
+                        <br/>
+                    </p>
+                </template>
+            </template>
+            <template if:false={error}>
+                {error}
+            </template>
+
+        </div>
+    </lightning-card>
+
+</template>

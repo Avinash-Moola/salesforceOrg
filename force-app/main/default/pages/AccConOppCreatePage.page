@@ -1,0 +1,30 @@
+<apex:page controller="FirstController" >
+    <apex:form >
+        <apex:pageMessage severity="confirm" strength="3" title="Sample Message"> 
+            Hey this is a message
+        </apex:pageMessage>
+        <apex:pageMessages >
+        
+        </apex:pageMessages>
+
+        
+        <apex:pageBlock title="All in one"  >
+            
+        	<apex:pageBlockSection title="Account Information"  >
+            	<apex:inputText value="{!accName}" label="Account Name" />
+                <apex:inputText value="{!accEmployees}" label="Number of Employees" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Information">	
+            	<apex:inputText value="{!conName}" label="Contact Name" />
+                <apex:inputText value="{!conEmail}" label="Email" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Oportunity Information">
+            	<apex:inputText value="{!oppName}" label="Opportunity Name" />
+                <apex:inputText value="{!oppAmount}" label="Amount" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="Bottom">
+            	<apex:commandButton action="{!saveMethod}" value="Save all Three" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

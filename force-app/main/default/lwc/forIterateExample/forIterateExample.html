@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Contact List">
+        <ul class="slds-m-around_medium">
+            <template iterator:it={Contacts}>
+                <li key ={id.value.id}  >
+                    <div if:true={it.first} class = "first-class"></div>
+                    {it.value.Name},{it.value.Title}
+                    <div if:false={it.last} class = "last-class"></div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

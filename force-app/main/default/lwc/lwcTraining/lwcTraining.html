@@ -1,0 +1,15 @@
+<template>
+    <div>
+       <lightning-button variant="brand" label={buttonLabel} value={buttonLabel} onclick={handleClick}></lightning-button>
+      <template if:true={propertyFlag} >
+        <lightning-input type="text" variant="label-stacked" name="name" label="Enter First Name" placeholder="type here..." onchange={oChangeHandler}></lightning-input>
+       <lightning-formatted-text value={outPutText} ></lightning-formatted-text>
+      </template>
+      No of clicks : {i}
+    </div>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+      <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+      <br>Chaild<br><p class="slds-p-horizontal_small">{text1}</p>
+      <p slot="footer">Card Footer</p>
+    </lightning-card>
+</template>

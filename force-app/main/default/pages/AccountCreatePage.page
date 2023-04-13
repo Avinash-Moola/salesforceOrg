@@ -1,0 +1,38 @@
+<apex:page standardController="Account" extensions="LeadExtension" sidebar="false" showHeader="false">
+    
+    <apex:tabPanel >
+    <apex:tab label="Account" >
+    <apex:form >
+  
+        <apex:pageBlock title="Account Create & Edit Page" >
+            <apex:pageBlockSection columns="3" >
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!account.NumberOfEmployees}"/>
+                <apex:inputField value="{!account.Rating}"/>
+                <apex:inputField value="{!account.Type}"/>
+               
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="Bottom">
+                	<apex:commandButton action="{!save}" value="Save Record" />
+                </apex:pageBlockButtons>
+   		 </apex:pageBlock>
+        
+        <apex:pageBlock title="Lead List Records" >
+             <apex:pageBlockTable value="{!lList}" var="l">
+                <apex:column value="{!l.name}"/>
+                <apex:column value="{!l.status}"/>
+        	</apex:pageBlockTable>
+        </apex:pageBlock>
+
+
+    </apex:form>
+        </apex:tab>
+        <apex:tab label="My Tab" >
+            hello <br/>
+            hi
+            	how are you
+        </apex:tab>
+	</apex:tabPanel>
+  
+</apex:page>

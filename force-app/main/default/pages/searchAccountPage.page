@@ -1,0 +1,25 @@
+<apex:page controller="AccountSearchController" extensions="LeadExtension" sidebar="false" >
+    <apex:form >
+    	<apex:pageBlock title="Search Account" >
+        	<apex:pageBlockSection columns="2" >
+            	<apex:inputText value="{!accName}" label="Account Name" />
+                <apex:commandButton action="{!searchMethod}" value="Search" reRender="t1" />
+            </apex:pageBlockSection>
+		 </apex:pageBlock>
+
+         <apex:pageBlock title="Account Records" >
+            <apex:pageBlockTable value="{!accList}" var="a" id="t1"  >
+            	<apex:column value="{!a.Name}" />
+                <apex:column value="{!a.Phone}" />
+            </apex:pageBlockTable>
+         </apex:pageBlock>
+           
+         <apex:pageBlock title="Lead Records" >
+            <apex:pageBlockTable title="Lead Records"  value="{!lList}" var="l" id="t2" >
+                <apex:column value="{!l.name}"/>
+                <apex:column value="{!l.status}"/>
+        	</apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

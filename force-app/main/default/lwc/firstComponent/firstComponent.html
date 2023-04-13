@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Account Search">
+      <div class="slds-p-horizontal_small">
+        <lightning-input label="Search Accounts" type="search" onchange={handleSearchTermChange}></lightning-input>
+        <template if:true={accounts}>
+          <lightning-datatable data={accounts} columns={columns} key-field="Id"></lightning-datatable>
+        </template>
+        <template if:false={accounts}>
+          <p>No accounts found</p>
+        </template>
+      </div>
+      <div class="slds-p-horizontal_small">
+        <lightning-input label="City" type="search" onchange={handleCityChange}></lightning-input>
+        <lightning-button label="Search" onclick={handleCityClick}></lightning-button>
+      </div>
+    </lightning-card>
+  </template>

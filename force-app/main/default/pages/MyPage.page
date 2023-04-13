@@ -1,0 +1,20 @@
+<apex:page showHeader="false" standardController="Teacher__c"  title="My Test Owl">
+        <apex:form >
+           <apex:outputText value="Teacher Detail"/>
+            <br/>
+            <apex:outputText value="Name"/>
+            <apex:inputField value="{!Teacher__c.Name}"/>
+            <br/>
+            <apex:outputText value="Phone"/>
+            <apex:inputField value="{!Teacher__c.Mobile__c}"/>
+            <br/>
+            <apex:outputText value="Subject"/>
+            <apex:inputField value="{!Teacher__c.Subject__c}"/>
+            <br/>
+            <apex:outputText value="Email"/>
+            <apex:inputField value="{!Teacher__c.Email__c}"/>
+            <br/>
+            <apex:commandButton action="{!save}" value="Save"/>
+        </apex:form>
+
+</apex:page>

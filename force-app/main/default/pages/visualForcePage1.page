@@ -1,0 +1,106 @@
+<apex:page controller="visualforcePageController1" lightningStylesheets="true" title="My First Page">
+	 <style type="text/css">
+    	body 
+         { background-image: url("https://thumbs.gfycat.com/PlushLonelyGoldenmantledgroundsquirrel-size_restricted.gif"); 
+         background-repeat:no-repeat;
+         background-attachment: fixed;  
+         background-size: cover;
+         }
+    </style>
+    <body >
+         
+         	
+    <div style="background-image: url(https://cdn3.f-cdn.com/contestentries/329593/16030908/569a8dbb02b52_thumb900.jpg);background-size: weidth:200px;background-repeat: no-repeat;width:300px;height:400px; text-align:center;border-style: solid;">
+        <br/>
+        <apex:form style="font-align:center; font-size:50px; margin-top: 100px;">
+        	<apex:outputText style="font-size:20px" >{!temp} &#8451; </apex:outputText>
+            <br/>
+            <apex:outputLabel style="font-size:20px"  for="city" value="Enter City "></apex:outputLabel>
+            <apex:inputText style="font-size:20px"  id="city" value="{!location}"/><br/>
+            <apex:commandButton style="font-size:15px"  value="Get Temperature" action="{!weatherClass}"/>
+        </apex:form>
+    </div>
+    
+    <div style=" width: 50%"  >
+        <apex:form >
+            <apex:pageBlock title="Calculator" id="cal" >
+                <apex:pageBlockSection title="Type 1" rendered="true" >
+                    
+                    <apex:inputText title="asf" value="{!number1}" label="Eneter Number 1"  /><br/>
+                       <apex:inputText label="Eneter Number 2" value="{!number2}"/>
+                    <br/>
+                   		<apex:commandButton value="Add" action="{!addition}" reRender="cal"/>
+                    <apex:commandButton value="Sub" action="{!subtraction}" reRender="cal"/>
+                	<apex:outputText id="res" >{!result}</apex:outputText>                    
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Type 2" rendered="true" >
+                	<apex:outputText id="opt" style="font-size:30px">
+                    	{!numString}
+                    </apex:outputText>
+                    <br/>
+                    <apex:panelGrid columns="2">
+                    	<apex:panelGrid columns="3"  >
+                            <apex:commandButton style="font-size:30px" value="1" action="{!one}" reRender="cal" />
+                            <apex:commandButton style="font-size:30px" value="2" action="{!two}" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="3" action="{!three}" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="4" action="{!four}" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="5" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="6" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="7" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="8" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="9" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="0" reRender="cal"/>
+                   		 </apex:panelGrid>
+                        <apex:panelGrid style="border-left-style:solid" >
+                            <apex:commandButton style="font-size:30px" value="+" action="{!plus}" reRender="cal" />
+                            <apex:commandButton style="font-size:30px" value="-" action="{!minus}" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="*" action="{!multi}" reRender="cal"/>
+                            <apex:commandButton style="font-size:30px" value="/" action="{!devide}" reRender="cal"/>
+                   		 </apex:panelGrid>
+                    </apex:panelGrid>
+                    
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+      	</apex:form>
+    </div>
+	<div>
+        <apex:panelGrid columns="2">
+    	<apex:form >
+        	
+                <apex:pageBlock title="Search Accounts" >
+            	
+                        <apex:pageBlockSection title="Account Information" >
+                            <apex:inputText label="Enetr Account Name" value="{!accName}"/>
+                            <apex:commandButton value="Search" action="{!searchAccount}" reRender="accTableID, check"/>
+                            
+                            <apex:pageBlockTable id="accTableID" value="{!accList}" var="acl" rendered="true">
+                                
+                                <apex:column value="{!acl.name}" />
+                                <apex:column value="{!acl.phone}"/>
+                                <apex:column value="{!acl.id}"/>
+                                
+                            </apex:pageBlockTable>
+                        
+                    </apex:pageBlockSection>
+                    
+            </apex:pageBlock>
+               
+        </apex:form>
+        <apex:form >
+                <apex:pageBlock title="Contacts">
+                	<apex:pageBlockSection id="check" title="Contacts Info" rendered="true">
+                        <apex:repeat value="{!accList}" var="ac">
+                        	<apex:inputCheckbox label="{!ac.name}"/>
+                           
+                        </apex:repeat>
+                    </apex:pageBlockSection>
+            	</apex:pageBlock>
+            </apex:form>
+         </apex:panelGrid>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fvq5oE01EVg" title="YouTube video player" ></iframe>
+    </div>
+<!------------------------------------------------------------------------------>
+        
+    
+    </body>    
+</apex:page>

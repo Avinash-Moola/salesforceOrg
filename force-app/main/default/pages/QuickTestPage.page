@@ -1,0 +1,16 @@
+<apex:page >
+
+  <h1>Congratulations</h1>
+  This is your new Page
+   <br/>
+    <apex:form >
+    
+            <apex:outputText value="{!$Label.abhisol__My_Custom_Label}"/>
+              
+     <apex:inputText title="abc" label="def" />
+
+    </apex:form>
+ <br/>
+ <br/>
+  {!$Label.abhisol__My_Custom_Label}
+</apex:page>

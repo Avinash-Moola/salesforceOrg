@@ -1,0 +1,11 @@
+.first-class
+{
+    border-top: 5;   color: red; 
+    padding: 5px;
+}
+
+.last-class
+{
+    border-bottom: 5px; color: yellow;
+    padding: 5px;
+}
