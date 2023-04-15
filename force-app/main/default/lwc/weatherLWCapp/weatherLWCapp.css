@@ -1,0 +1,16 @@
+h1 { 
+    color: #0070d2;
+    font-size: x-large;max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+}
+

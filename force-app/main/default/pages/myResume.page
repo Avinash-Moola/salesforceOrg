@@ -166,7 +166,7 @@
             <section class="resume-section" id="awards">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Certifications</h2>
-                    <ul class="fa-ul mb-0">
+              <!--      <ul class="fa-ul mb-0">
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             Salesforce Administrator
@@ -179,7 +179,11 @@
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             Salesforce Platform Developer I
                         </li>
-                    </ul>
+                    </ul>   -->
+                    <br/><br/>
+                    <span><img src="{!$resource.Administrator}" alt="Salesforce Administrator" width="10%" height="10%"/></span>
+                    <span><img src="{!$resource.AppBuilder}"  alt="Salesforce Platform App Builder" width="10%" height="10%"/></span>
+                    <span><img src="{!$resource.PlatformDeveloper1}"  alt="Salesforce Platform Developer I" width="10%" height="10%"/></span>
                 </div>
             </section>
         </div>
