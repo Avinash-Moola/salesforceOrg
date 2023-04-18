@@ -1,0 +1,74 @@
+:host(){
+    --dark-blue:#00071c;
+    --dark-grey:#181818;
+    --light-white:#ececec;
+    --light-red:#910024;
+    --size-20:20px;
+    --size-16:16px;
+    --size-14:14px;
+    --size-12:12px;
+    --size-10:10px;
+
+}
+
+.box{
+    max-width: 420px;
+    text-align: center;
+    margin: auto;
+    background-color: var(--dark-blue);
+    color: var(--light-white);
+    border-radius: 38px;
+    padding: var(--size-16);
+}
+
+h1{
+    padding: 20px 0px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h2{
+    color: var(--light-red);
+    font-size: var(--size-20);
+    font-weight: bold;
+}
+
+.info-box{
+    background-color: var(--dark-grey);
+    padding: var(--size-10);
+    border-radius: 0px 0px 30px 30px;
+}
+
+label{
+    color: var(--light-white);
+    font-size: var(--size-20);
+}
+
+input{
+    color: var(--dark-blue);
+    padding: 5px;
+    font-size:var(--size-16);
+}
+
+button{
+    background-color: var(--light-red);
+    border: none;
+    color: var(--light-white);
+    padding: var(--size-10);
+    font-size: var(--size-20);
+    font-weight: bold;
+}
+
+.result-section{
+    font-size: var(--size-20);
+    color: var(--light-white);
+    text-align: center;
+}
+
+.app{
+    min-height: 100vh;
+    background-image: url('/sfsites/c/resource/veggiesmin');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
