@@ -1,0 +1,9 @@
+<template>
+    <lightning-card  variant="Narrow"  title="I am Parent Component" icon-name="standard:account">
+        <lightning-input type="text" variant="standard" name="name" label="Enter Name" placeholder="type here..." onchange={nameHandler}></lightning-input>
+        <h1>Text from child : {textFromChild}</h1>
+        <c-test-child-component child-text = {parentText} onchaildevent ={childEventHandler}></c-test-child-component>
+
+        <p slot="footer">Parent Card Footer</p>
+    </lightning-card>
+</template>
