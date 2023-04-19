@@ -1,0 +1,35 @@
+<template>
+    <div class="app slds-var-m-top_xx-large">
+        <div class="box">
+            <div>
+                <h1>Clock</h1>
+                <p class="time">{currentTime}</p>
+                <p>{dateToDay}</p>
+                <!--Alarm-->
+                <h1 class="slds-p-top_large">Alarm</h1>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                      <c-clock-dropdown label="Hour(s)" options={hours} unique-id="select-hours" onoptionhandler={optionhandler}></c-clock-dropdown>
+                    </div>
+                    <div class="slds-col">
+                      <c-clock-dropdown label="Minute(s)" options={minutes} unique-id="select-minutes" onoptionhandler={optionhandler}></c-clock-dropdown>
+                    </div>
+                    <div class="slds-col">
+                      <c-clock-dropdown label="AM/PM" options={meridiems} unique-id="select-meridiems" onoptionhandler={optionhandler}></c-clock-dropdown>
+                    </div>
+                  </div>
+                     <div class="slds-var-m-top_medium">
+                        <img src={clockImage} alt="Clock Image" height="75px" width="75px" class={shakeImage}>
+                     </div>
+                  <div class="button-section slds-m-top_large">
+                        <template if:false={isAlarmSet}>
+                            <button class="slds-button slds-button_brand slds-button_stretch"  onclick={setAlarmHandler}>Set Alarm</button>
+                        </template>
+                        <template if:true={isAlarmSet}>
+                            <button  class="slds-button slds-button_brand slds-button_stretch" onclick={clearAlarmHandler}>Reset Alarm</button>
+                        </template>
+                     </div>
+            </div>
+        </div>
+    </div>
+</template>
