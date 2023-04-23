@@ -15,9 +15,11 @@
 
 }
 
+.box{
+    margin-top: 15vh;
+}
 .container{
     max-width: 420px;
-    margin-top: 50vh;
     text-align: center;
     margin: auto;
    background-color: var(--transparent-background);

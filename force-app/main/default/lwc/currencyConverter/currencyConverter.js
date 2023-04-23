@@ -1,6 +1,5 @@
 import { LightningElement } from 'lwc';
 import { countryCodeList } from 'c/countryCodeList'
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class CurrencyConverter extends LightningElement {
     countryCodeList = countryCodeList
@@ -46,17 +45,17 @@ export default class CurrencyConverter extends LightningElement {
         this.setInputCurrency()
        // this.inputCurrency = Number((this.outputCurrency / this.exchangeValue)).toFixed(3)
         //this.outputCurrency = this.inputCurrency
-        console.log(this.inputCurrency);
+       // console.log(this.inputCurrency);
 
     }
 
     checkFromAndToContury(){
         if(this.fromCountry == this.toContury){
-            console.log(this.fromCountry + ' and ' + this.toContury);
+           // console.log(this.fromCountry + ' and ' + this.toContury);
             this.exchangeValue = Number(1)
         }
         else{
-            console.log(this.fromCountry + ' and ' + this.toContury);
+          //  console.log(this.fromCountry + ' and ' + this.toContury);
             this.apiCall()
         }
     }
@@ -77,7 +76,7 @@ export default class CurrencyConverter extends LightningElement {
             const data = await fetch(url, options)
             const jsonData = await data.json()
             this.exchangeValue = Number(jsonData)
-            console.log(this.exchangeValue)
+           // console.log(this.exchangeValue)
        } catch (error) {
             console.log(error);
        }
