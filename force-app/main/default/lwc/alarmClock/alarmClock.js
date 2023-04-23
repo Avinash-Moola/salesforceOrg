@@ -46,7 +46,8 @@ export default class AlarmClock extends LightningElement {
         if(hour == 0){
           hour = 12
         } else if(hour >=12){
-          hour = hour - 12
+          
+          hour = hour>12 ? hour - 12 : hour 
           ampm = "PM"
         }
         hour = hour<10 ? "0"+hour : hour

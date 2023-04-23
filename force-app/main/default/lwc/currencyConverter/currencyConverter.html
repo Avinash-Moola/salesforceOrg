@@ -1,0 +1,34 @@
+<template>
+    <div class="app slds-var-p-around_large">
+        <div>
+            <div class="container slds-var-p-around_large">
+                <h1>Currency Converter</h1>
+                <div class="info">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <span><lightning-input type="number" value={inputCurrency}
+                                     placeholder="Amount"    onchange={inputHandler}></lightning-input></span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <lightning-combobox  name="from" value={fromCountry} placeholder="Select"
+                                        options={countryCodeList} onchange={handleChangeFrom}></lightning-combobox></span>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col ">
+                                <span><lightning-input type="number"  value={outputCurrency}
+                                    placeholder="Amount"     onchange={outputHandler}></lightning-input></span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <lightning-combobox name="to" value={toContury} placeholder="Select"
+                                        options={countryCodeList} onchange={handleChangeTo}></lightning-combobox></span>
+                            </div>
+                           
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

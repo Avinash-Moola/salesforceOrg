@@ -1,0 +1,41 @@
+:host(){
+    --size-20px:20px;
+    --container-background-color:#5a0000;
+    --page-background-color:linear-gradient(55deg, rgb(5 159 150 / 97%) 0%, rgb(255 0 0) 100%);
+    --transparent-background:#ffffff26;
+
+}
+
+.app{
+    min-height: 100vh;
+    background: var(--page-background-color);
+  /*  background-image: url('/sfsites/c/resource/veggiesmin');
+    background-repeat: no-repeat; 
+    background-size: cover;*/
+
+}
+
+.container{
+    max-width: 420px;
+    margin-top: 50vh;
+    text-align: center;
+    margin: auto;
+   background-color: var(--transparent-background);
+    color: white;
+    padding: var(--size-20px);
+    box-shadow: 0px 0px 10px 5px #000000a8;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+lightning-input,lightning-combobox{
+    --slds-c-input-text-color : rgb(255, 255, 255);
+    --slds-c-input-color-background: var(--transparent-background);
+    font-weight: bold;
+    font-size: medium;
+}

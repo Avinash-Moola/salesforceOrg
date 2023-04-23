@@ -1,0 +1,18 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Account" icon-name="standard:account">
+        <template if:true={getAccounts}>
+            <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Website</th>
+                </tr>
+                <template for:each={getAccounts.data} for:item='item'>
+                    <tr key={item.id}>
+                        <td>{item.Name}</td>
+                        <td>{item.Website}</td>
+                      </tr>
+                </template>
+              </table>
+        </template>
+    </lightning-card>
+</template>
