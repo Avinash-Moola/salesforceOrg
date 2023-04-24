@@ -20,6 +20,7 @@ export default class CurrencyConverter extends LightningElement {
         this.fromCountry = event.target.value;
         this.inputCurrency = ''
         this.outputCurrency = ''
+        this.exchangeValue = ''
         this.checkFromAndToContury()
         // console.log(this.fromCountry);
     }
@@ -28,6 +29,7 @@ export default class CurrencyConverter extends LightningElement {
         this.toContury = event.target.value;
         this.inputCurrency = ''
         this.outputCurrency = ''
+        this.exchangeValue = ''
         this.checkFromAndToContury()
         // console.log(this.toContury);
     }
@@ -89,7 +91,7 @@ export default class CurrencyConverter extends LightningElement {
     }
 
     
-    
+       
 
     
 }

@@ -1,6 +1,7 @@
 :host(){
     --background-color:#065460;
-    --size-25:25px;
+    --size-25:30px;
+    --shadow: 0px 0px 10px 5px #000000a8;;
 }
 
 .box{
@@ -24,7 +25,9 @@ h1{
     font-style: normal;
     background-color: rgb(0 0 0 / 16%);
     border-radius: 10px;
+    box-shadow: var(--shadow);
 }
+
 
 button{
     background-color: rgb(0 0 0 / 26%);
@@ -32,6 +35,10 @@ button{
     padding: 10px;
     font-size: 20px;
     border-radius: 10px;
+    box-shadow: var(--shadow);
+    outline: none;
+    /* border: white; */
+    border-color: white;
 }
 
 
@@ -63,4 +70,9 @@ button{
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  .analog-clock{
+    
+    box-shadow: 0px 0px 10px 5px #000000a8;
   }

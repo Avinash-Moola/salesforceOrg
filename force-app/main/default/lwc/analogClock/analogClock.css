@@ -1,0 +1,40 @@
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clock-face {
+    width: 100px;
+    height: 100px;
+    border: solid;
+    border-radius: 50%;
+    border-color: white;
+  }
+  
+  .clock-circle {
+    stroke: #000;
+    stroke-width: 2;
+    opacity:0;
+  }
+  
+  .clock-hand {
+    stroke: #ffffff;
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+
+  .second{
+    stroke: #ff0000;
+
+  }
+  
+  .numbers {
+    color: #000000;
+    font-size: 15px;
+    text-anchor: middle;
+    fill: #ffffff;
+    font-weight: bold;
+    
+  }
+

@@ -2,11 +2,15 @@
     <div class="app slds-var-m-top_xx-large">
         <div class="box">
             <div>
-                <h1>Clock</h1>
-                <p class="time">{currentTime}</p>
-                <p>{dateToDay}</p>
+                <!--<h1>Clock</h1>-->
+                <p class="time slds-var-m-top_medium">{currentTime}</p>
+                <p class="slds-var-m-top_medium">{dateToDay}</p>
+                <!--Analog Clock-->
+                <div class="slds-var-m-top_medium">
+                    <c-analog-clock></c-analog-clock>
+                </div>
                 <!--Alarm-->
-                <h1 class="slds-p-top_large">Alarm</h1>
+                <h1 class="slds-var-p-top_medium">Alarm</h1>
                 <div class="slds-grid slds-gutters">
                     <div class="slds-col">
                       <c-clock-dropdown label="Hour(s)" options={hours} unique-id="select-hours" onoptionhandler={optionhandler}></c-clock-dropdown>

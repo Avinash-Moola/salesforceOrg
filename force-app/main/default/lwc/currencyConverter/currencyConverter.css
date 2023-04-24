@@ -9,6 +9,8 @@
 .app{
     min-height: 100vh;
     background: var(--page-background-color);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
   /*  background-image: url('/sfsites/c/resource/veggiesmin');
     background-repeat: no-repeat; 
     background-size: cover;*/
@@ -41,3 +43,16 @@ lightning-input,lightning-combobox{
     font-weight: bold;
     font-size: medium;
 }
+
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
