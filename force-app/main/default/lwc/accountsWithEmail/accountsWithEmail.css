@@ -1,10 +1,9 @@
-
 th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #cf0000;
+    border-bottom: 1px solid #ddd;
   }
 
   tr:hover {
-    background-color: rgb(87, 255, 227);
+    background-color: coral;
 }

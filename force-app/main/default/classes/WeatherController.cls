@@ -30,4 +30,3 @@ public with sharing class WeatherController {
         return null;
     }
   }
-  

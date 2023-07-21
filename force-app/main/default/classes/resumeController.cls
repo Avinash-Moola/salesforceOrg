@@ -4,8 +4,6 @@ public class resumeController
     public static list<abhisol__Experience__mdt> expList{get;set;}
     public static list<abhisol__Education__mdt> eduList{get;set;}
     public static List<abhisol__certification__mdt> certList{get;set;}
-    public static string name;
-    
     public resumeController()
     {
     //retrive Experience records

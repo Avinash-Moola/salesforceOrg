@@ -4,7 +4,6 @@ export default class TestChildComponent extends LightningElement {
     @api childText;
     @api cText;
      textFromChild;
-     @api chailage;
 
      @api age;
      agechangeHandeler(event){
