@@ -41,6 +41,10 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Certifications</a></li>
                 </ul>
             </div>
+                    <div>
+                     	&#128065;<!-- hitwebcounter Code START -->
+						<img src="https://hitwebcounter.com/counter/counter.php?page=8528334&style=0007&nbdigits=3&type=ip&initCount=100" title="Free Counter" Alt="web counter"   border="0" />                     
+</div>
         </nav>
         <!-- Page Content-->
         <div class="container-fluid p-0" style="background: url('https://static.vecteezy.com/system/resources/previews/017/308/322/original/background-for-presentation-green-grass-with-flower-under-the-blue-sky-with-curved-clouds-free-space-in-the-center-for-insert-text-free-vector.jpg') ;
@@ -81,9 +85,9 @@
                                 <p>{!exp.Description__c}</p>
                             </div>
                             <div class="flex-shrink-0"><span class="text-primary"><apex:outputText value="{0, date, MMMM yyyy }">
-                                <apex:param value="{!exp.abhisol__Start_Date__c}" />
+                                <apex:param value="{!exp.Start_Date__c}" />
                             </apex:outputText> - <apex:outputText value="{0, date, MMMM yyyy }">
-                                <apex:param value="{!exp.abhisol__End_Date__c}" />
+                                <apex:param value="{!exp.End_Date__c}" />
                             </apex:outputText></span></div>
                         </div>
                     </apex:repeat>
@@ -98,13 +102,13 @@
                         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                             <div class="flex-grow-1">
                                 <h3 class="mb-0">{!edu.label}</h3>
-                                <div class="subheading mb-3">{!edu.abhisol__Degree__c}</div>
-                                <div>{!edu.abhisol__Field_of_study__c}</div>
+                                <div class="subheading mb-3">{!edu.Degree__c}</div>
+                                <div>{!edu.Field_of_study__c}</div>
                             </div>
                             <div class="flex-shrink-0"><span class="text-primary"><apex:outputText value="{0, date, MMMM yyyy }">
-                                <apex:param value="{!edu.abhisol__Start_Date__c}" />
+                                <apex:param value="{!edu.Start_Date__c}" />
                             </apex:outputText> - <apex:outputText value="{0, date, MMMM yyyy }">
-                                <apex:param value="{!edu.abhisol__End_Date__c}" />
+                                <apex:param value="{!edu.End_Date__c}" />
                             </apex:outputText></span></div>
                         </div>
                     </apex:repeat>
@@ -181,9 +185,9 @@
                         </li>
                     </ul>   -->
                     <br/><br/>
-                    <span><img src="{!$resource.Administrator}" alt="Salesforce Administrator" width="10%" height="10%"/></span>
-                    <span><img src="{!$resource.AppBuilder}"  alt="Salesforce Platform App Builder" width="10%" height="10%"/></span>
-                    <span><img src="{!$resource.PlatformDeveloper1}"  alt="Salesforce Platform Developer I" width="10%" height="10%"/></span>
+                    <span><img src="{!$resource.Administrator}" alt="Salesforce Administrator" width="15%" height="15%"/></span>
+                    <span><img src="{!$resource.AppBuilder}"  alt="Salesforce Platform App Builder" width="15%" height="15%"/></span>
+                    <span><img src="{!$resource.PlatformDeveloper1}"  alt="Salesforce Platform Developer I" width="15%" height="15%"/></span>
                 </div>
             </section>
         </div>

@@ -37,9 +37,9 @@
                     <template if:true={conList}>
                         <template for:each={conList} for:item='contact'>
                             <tr key={contact.id} class="slds-hint-parent">
-                                <th data-label="Last Name" scope="row">
+                                <td data-label="Last Name" >
                                 <div class="slds-truncate" title="Last Name">{contact.LastName}</div>
-                                </th>
+                                </td>
                                 <td data-label="Phone">
                                 <div class="slds-truncate" title="Phone">{contact.Phone}</div>
                                 </td>

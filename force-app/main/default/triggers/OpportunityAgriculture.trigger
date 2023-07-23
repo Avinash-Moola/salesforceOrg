@@ -28,7 +28,7 @@ trigger OpportunityAgriculture on Account (after insert, after update)
                     opportunity opp = new opportunity(name = a.Name + ' opp',AccountId = a.Id ,StageName = 'Prospecting', closeDate = system.today()+90);
                     oppList.add(opp);
                 }
-            insert oppList;
+            update oppList;
             }
         }
        
