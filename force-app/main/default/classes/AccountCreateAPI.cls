@@ -9,7 +9,7 @@ global class AccountCreateAPI
         system.debug(req.requestURI);
         system.debug(req.requestURI.lastIndexOf('/')+1);
         system.debug(leadID);
-        account l = [select id,name,NumberOfEmployees,AnnualRevenue  from account where id = :leadID ];
+        account l = [select id,name,NumberOfEmployees,phone,AnnualRevenue  from account where id = :leadID ];
         return l;
     }
     

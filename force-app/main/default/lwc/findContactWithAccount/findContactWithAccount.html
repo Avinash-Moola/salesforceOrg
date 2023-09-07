@@ -19,9 +19,9 @@
         </div>
         <!-- Normal Table -->
         <div>
-            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered"  aria-label="Example default base table of Opportunities">
                 <thead>
-                    <tr class="slds-line-height_reset">
+                    <tr class="slds-line-height_reset" >
                         <th class="" scope="col">
                         <div class="slds-truncate" title="Last Name">Contact Last Name</div>
                         </th>
@@ -36,7 +36,7 @@
                 <tbody>
                     <template if:true={conList}>
                         <template for:each={conList} for:item='contact'>
-                            <tr key={contact.id} class="slds-hint-parent">
+                            <tr key={contact.id} class="slds-hint-parent" >
                                 <td data-label="Last Name" >
                                 <div class="slds-truncate" title="Last Name">{contact.LastName}</div>
                                 </td>

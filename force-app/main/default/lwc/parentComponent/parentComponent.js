@@ -10,4 +10,4 @@ export default class ParentComponent extends LightningElement {
     chaildEventHandler(event){
         this.chaildName = event.detail.chailage;
     }
-}
+} 
