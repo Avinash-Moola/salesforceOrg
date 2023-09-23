@@ -1,0 +1,47 @@
+<template>
+    <div class="app  slds-var-p-top_x-large">
+        <div class="box">
+            <div class="inputInfo">
+                <template if:false={flag}>
+                    <div>
+                        <input type="text"  placeholder="City Name..." onchange={inputCityNameHandler} >
+                    </div>
+                </template>
+                <template if:true={flag}>
+                    <div>
+                        <h1>{locationName}</h1>
+                        <p><img src={mapIcon} alt="map">{locationCountry}</p>
+                    </div>
+                </template>
+                <div class="my-icon">
+                    <lightning-button-icon class="my-icon"  icon-name="action:back" size="large" variant="bare" alternative-text="Settings" title="Search" onclick={buttonHandler}></lightning-button-icon>
+                </div>
+            </div>
+            
+            <template if:true={flag}>
+            <div class="outputInfo">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col iconInfo">
+                        <img src={weatherIcon} alt="Weather Icon" class="weatherImage"><br>
+                        <p>{conditionText}</p>
+                    </div>
+                    <div class="slds-col temp">
+                        <span>{temp}</span>
+                        <div>
+                            <template if:true={buttonFlag}><button value="celcius" onclick={unitsHandler}>Show in Metric</button></template>
+                            <template if:false={buttonFlag}><button value="farnheat" onclick={unitsHandler}>Show in Imperial</button></template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="slds-col info">
+                        <p>Wind: {windSpeed}</p>
+                        <p>Humidity: {humidity}</p>
+                        <p>Feels Like: {feelslike}</p>
+                </div>
+            </footer>
+        </template>
+        </div>
+    </div>
+</template>

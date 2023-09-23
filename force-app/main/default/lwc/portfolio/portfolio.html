@@ -1,0 +1,109 @@
+<template>
+    <div >
+        <lightning-layout>
+            <lightning-layout-item>
+                <div class="navBar" style="width: 220px;">
+                    <div class="profilePic">
+                        <img class="aviProfilePic" src={profilePic} alt="Avinash Pic">
+                    </div>
+                    <lightning-vertical-navigation selected-item={selectedItem} onselect={handleSelect}
+                        class="navigation">
+                        <lightning-vertical-navigation-section>
+                            <lightning-vertical-navigation-item-icon label="ABOUT ME" name="about_me"
+                                icon-name="utility:user">
+                            </lightning-vertical-navigation-item-icon>
+
+                            <lightning-vertical-navigation-item-icon label="EXPERIENCE" name="experience"
+                                icon-name="utility:company">
+                            </lightning-vertical-navigation-item-icon>
+
+                            <lightning-vertical-navigation-item-icon label="EDUCATION" name="education"
+                                icon-name="utility:knowledge_base">
+                            </lightning-vertical-navigation-item-icon>
+
+                            <lightning-vertical-navigation-item-icon label="SKILLS" name="skills"
+                                icon-name="utility:sobject_collection">
+                            </lightning-vertical-navigation-item-icon>
+
+                            <lightning-vertical-navigation-item-icon label="CERTIFICATIONS" name="certifications"
+                                icon-name="utility:ribbon">
+                            </lightning-vertical-navigation-item-icon>
+
+                        </lightning-vertical-navigation-section>
+
+                    </lightning-vertical-navigation>
+                    
+                    <div class="socialMedia">
+                        <template if:true={linkedinUrl}>
+                            <a href={linkedinUrl} target="_blank"><img src={linkedin} alt="Linkedin"
+                                    class="social-icon" /></a>
+                        </template>
+                        <template if:true={trailheadUrl}>
+                            <a href={trailheadUrl} target="_blank"><img src={trailhead} alt="Trailhead"
+                                    class="social-icon"></a>
+                        </template>
+                        <template if:true={githubUrl}>
+                            <a href={githubUrl} target="_blank"><img src={github} alt="Github"
+                                    class="social-icon"></a>
+                        </template>
+                        <template if:true={twitterUrl}>
+                            <a href={twitterUrl} target="_blank"><img src={twitter} alt="Twitter"
+                                    class="social-icon"></a>
+                        </template>
+                        <template if:true={youtubeUrl}>
+                            <a href={youtubeUrl} target="_blank"><img src={youtube} alt="Youtube"
+                                    class="social-icon"></a>
+                        </template>
+                    </div>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item class="Container" padding="around-medium">
+                <div >
+                    <template if:true={aboutMeFlag}>
+                        <div class="aboutMe">
+                            <h1>{fullName}</h1>
+                            <h2>{designation} at {company}</h2>
+                            <h2>{city}, {country}</h2>
+                            <!--<h3>{aboutMeFromLabel}</h3>-->
+                            <c-about-me-from-label content={aboutMeFromLabel}></c-about-me-from-label>
+                            <c-contact-details-component record-id={recordId} object-api-name={objectApiName} ></c-contact-details-component>
+
+                        </div>
+                    </template>
+                    <template if:true={experienceFlag}>
+                        <c-experience-component></c-experience-component>
+                    </template>
+                    <template if:true={educationFlag}>
+                        <c-education-component></c-education-component>
+                    </template>
+                    <template if:true={skillsFlag}>
+                        My Skills
+                    </template>
+                    <template if:true={certificationsFlag}>
+                        My Certifications
+                        <div class="slds-size_1-of-4">
+                            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Basic
+                                Carousel
+                                <lightning-carousel>
+                                    <lightning-carousel-image header="First Card" description="First card description."
+                                        alternative-text="First card accessible description."
+                                        href="javascript:void(0);">
+                                    </lightning-carousel-image>
+                                    <lightning-carousel-image header="Second Card"
+                                        description="Second card description."
+                                        alternative-text="Second card accessible description."
+                                        href="javascript:void(0);">
+                                    </lightning-carousel-image>
+                                    <lightning-carousel-image header="Third Card" description="Third card description."
+                                        alternative-text="Third card accessible description."
+                                        href="javascript:void(0);">
+                                    </lightning-carousel-image>
+                                </lightning-carousel>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

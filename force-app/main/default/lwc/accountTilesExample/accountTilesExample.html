@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Account Tiles" icon-name="standard:account">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter Account Name" onchange={changeHandler}></lightning-input>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap ">
+            <template for:each={accountList} for:item='acc'>
+                <div key = {acc.id} class="slds-col slds-size_4-of-12 ">
+                    <span>
+                        <lightning-card class="tile" variant="Narrow"  title={acc.Name} icon-name="standard:account">
+                            <p class="slds-p-horizontal_small">Phone : {acc.Phone}</p>
+                            <p class="slds-p-horizontal_small" >Website: <a data-value={acc.Website} target="_blank" onclick={clickHandle}>{acc.Website}</a></p>
+                        </lightning-card>
+                    </span>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,8 @@
+<template>
+    <lightning-card  variant="Narrow"  title="I am Parent Card" icon-name="standard:account">
+       
+       <lightning-input type="text" variant="standard" name="name" label="Ener Name" placeholder="type here..." onchange={clickHandle}></lightning-input>
+       <c-child1 childtext = {textValue}></c-child1>
+        <p slot="footer">Parent Card Footer</p>
+    </lightning-card>
+</template>

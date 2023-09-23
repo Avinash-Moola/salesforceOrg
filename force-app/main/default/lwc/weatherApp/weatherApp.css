@@ -1,0 +1,94 @@
+:host(){
+    --background-color:rgb(126, 126, 126);
+}
+
+.app{
+    /*background-color: cadetblue;*/
+    background-image: url('/sfsites/c/resource/AboveClouds');
+    min-height: 100vh;
+}
+
+.box{
+    max-width: 420px;
+    margin: auto;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px #000000a8;
+    background-color: #a5a5a52e;
+    text-align: center;
+}
+
+.weatherImage{
+    width: 80px
+}
+
+.inputInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+}
+
+.outputInfo{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-icon  {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease-in-out;
+    
+  }
+
+input,h1{
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    outline: none;
+}
+
+
+
+.temp{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.iconInfo {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+
+.inputInfo{
+    color: white;
+    font-size: 15px;
+}
+
+.info{
+    color: white;
+    font-size: 15px;    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: solid;
+    border-width: 1px;
+    border-color: darkslategrey;
+
+}
+
+button{
+    border-style: none;
+    background: none;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+}
