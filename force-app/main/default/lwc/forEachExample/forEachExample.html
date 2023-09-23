@@ -9,5 +9,13 @@
             </template>
         </ul>
     </lightning-card>
-
+    <div>{myNumberFormatted}</div>
+    <p><lightning-formatted-number value="1234.5678" maximum-fraction-digits="2"></lightning-formatted-number></p>
+    <lightning-formatted-number
+        value="5000.12345"
+        format-style="currency"
+        currency-code="USD"
+        minimum-fraction-digits="2"
+    >
+    </lightning-formatted-number>
 </template>

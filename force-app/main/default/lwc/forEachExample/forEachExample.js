@@ -7,4 +7,10 @@ export default class ForEachExample extends LightningElement {
         {ID : 2, Name: "Sony", Title: "Wife"},
         {ID : 3, Name: "Xeon", Title: "Son"}
     ]
+
+    myNumber = 1000;
+
+    get myNumberFormatted() {
+        return this.myNumber.toLocaleString();
+    }
 }
