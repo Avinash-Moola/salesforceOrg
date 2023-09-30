@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div class="outer_box" >
         <lightning-layout>
             <lightning-layout-item>
                 <div class="navBar" style="width: 220px;">
@@ -27,6 +27,10 @@
 
                             <lightning-vertical-navigation-item-icon label="CERTIFICATIONS" name="certifications"
                                 icon-name="utility:ribbon">
+                            </lightning-vertical-navigation-item-icon>
+
+                            <lightning-vertical-navigation-item-icon label="CONTACT ME" name="contactMe"
+                                icon-name="utility:sender_email">
                             </lightning-vertical-navigation-item-icon>
 
                         </lightning-vertical-navigation-section>
@@ -60,50 +64,49 @@
             <lightning-layout-item class="Container" padding="around-medium">
                 <div >
                     <template if:true={aboutMeFlag}>
-                        <div class="aboutMe">
-                            <h1>{fullName}</h1>
-                            <h2>{designation} at {company}</h2>
-                            <h2>{city}, {country}</h2>
-                            <!--<h3>{aboutMeFromLabel}</h3>-->
-                            <c-about-me-from-label content={aboutMeFromLabel}></c-about-me-from-label>
-                            <c-contact-details-component record-id={recordId} object-api-name={objectApiName} ></c-contact-details-component>
-
-                        </div>
+                        <c-about-me-component record-id = {recordId} object-api-name = {objectApiName}></c-about-me-component>
+                     <c-about-me-from-label content={aboutMeFromLabel}></c-about-me-from-label>
+                    <!--    <c-carousel-c-omponent></c-carousel-c-omponent>  -->
+                    <c-contact-details-component record-id={recordId} object-api-name={objectApiName} ></c-contact-details-component>
+                    <button class="slds-button slds-button_brand slds-align_absolute-center" onclick={modelComponentHandler}>Get in Touch</button>
                     </template>
+                    
                     <template if:true={experienceFlag}>
-                        <c-experience-component></c-experience-component>
+                        <c-experience-component record-id={recordId}></c-experience-component>
                     </template>
                     <template if:true={educationFlag}>
-                        <c-education-component></c-education-component>
+                        <c-education-component record-id={recordId}></c-education-component>
                     </template>
                     <template if:true={skillsFlag}>
-                        My Skills
+                        <c-skills-component></c-skills-component>
                     </template>
                     <template if:true={certificationsFlag}>
-                        My Certifications
-                        <div class="slds-size_1-of-4">
-                            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Basic
-                                Carousel
-                                <lightning-carousel>
-                                    <lightning-carousel-image header="First Card" description="First card description."
-                                        alternative-text="First card accessible description."
-                                        href="javascript:void(0);">
-                                    </lightning-carousel-image>
-                                    <lightning-carousel-image header="Second Card"
-                                        description="Second card description."
-                                        alternative-text="Second card accessible description."
-                                        href="javascript:void(0);">
-                                    </lightning-carousel-image>
-                                    <lightning-carousel-image header="Third Card" description="Third card description."
-                                        alternative-text="Third card accessible description."
-                                        href="javascript:void(0);">
-                                    </lightning-carousel-image>
-                                </lightning-carousel>
+                        <c-certifications-component></c-certifications-component>
+                    </template>
+                    <template if:true={contactMeFlag}>
+                        <div class="slds-p-around_large slds-m-left_x-large ">
+                            <h1 class="getInTouch">CONTACT ME</h1>
+                        </div>                        
+                        <div class="slds-grid slds-gutters slds-wrap "  style="display: flex;">
+                            <div class="slds-col">
+                                <span>
+                                    <c-get-in-touch></c-get-in-touch>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-p-top_xx-large">
+                                <span>
+                                    <c-map-component></c-map-component>
+                                </span>
                             </div>
                         </div>
                     </template>
                 </div>
             </lightning-layout-item>
         </lightning-layout>
+    </div>
+    <div>
+        <template if:true={modelComponentFlage}>
+            <c-model-component onmodelevent={modelEventHandler}></c-model-component>
+        </template>
     </div>
 </template>

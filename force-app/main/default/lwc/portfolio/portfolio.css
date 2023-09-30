@@ -8,6 +8,15 @@
 
 }
 
+.outer_box{
+    /*background-color: #00071c;
+    color: white;*/
+    background-image: url('/resource/backgroungImg');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+}
+
 .aviProfilePic{
     border-style: solid;
     border-width: 10px;
@@ -16,19 +25,6 @@
     margin: 10% 10px 10px;
 }
 
-h1{
-   font-size: 60px;
-    font-weight: bold;
-    margin-left: var(--text-left-margin);
-    margin-top: var(--text-top-margin);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-h2{
-    margin-top: 1px;
-    margin-left: var(--text-left-margin);
-    font-size: 20px;
-}
 
 .socialMedia{
     margin-top: 10px;
@@ -41,6 +37,10 @@ h2{
     margin: 16px 16px 0px 0px;
 }
 
+.getInTouch{
+    font-size: 25px;
+    font-weight: bolder;
+}
 
 /*
 .Container{

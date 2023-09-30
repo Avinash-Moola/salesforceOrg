@@ -1,57 +1,77 @@
 <template>
     <div>
         <ul class="slds-timeline">
-            <li>
-                <div class="slds-timeline__item_expandable slds-timeline__item_task slds-is-open">
-                    <span class="slds-assistive-text">task</span>
-                    <div class="slds-media">
-                        <div class="slds-media__figure">
-                            <button class="slds-button slds-button_icon"
-                                title="Toggle details for Review proposals for EBC deck with larger team and have marketing review this"
-                                aria-controls="task-item-expanded-33" aria-expanded="true">
-                                <svg class="slds-button__icon slds-timeline__details-action-icon" aria-hidden="true">
-                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
-                                </svg>
-                            </button>
-                            <div class="slds-icon_container slds-icon-standard-task slds-timeline__icon" title="task">
-                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
-                                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#task"></use>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="slds-media__body">
-                            <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
-                                <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
-                                    
-                                    <h3 class="slds-truncate"
-                                        title="Review proposals for EBC deck with larger team and have marketing review this">
-                                        SR. CONSULTANT
-                                    </h3>
-                                    
-                                </div>
-                                <div class="slds-timeline__actions slds-timeline__actions_inline">
-                                    <p class="slds-timeline__date">March 2020 | Present</p>
-                                    
+            <template for:each={WorkExperiences} for:item='WorkExperience'>
+                <li key={WorkExperience.id}>
+                    <div class="slds-timeline__item_expandable slds-timeline__item_task slds-is-open">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <button class="slds-button slds-button_icon" aria-controls="task-item-expanded-33"
+                                    aria-expanded="true">
+                                    <svg class="slds-button__icon slds-timeline__details-action-icon"
+                                        aria-hidden="true">
+                                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                                    </svg>
+                                </button>
+                                <div class="slds-icon_container slds-icon-standard-task slds-timeline__icon">
+                                    <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                        <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#task"></use>
+                                    </svg>
                                 </div>
                             </div>
-                            <p class="slds-m-horizontal_xx-small">
-                                <b>AVEVA | Hyderabad</b> 
-                            </p>
-                            <article
-                                class="slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small slds-p-around_medium"
-                                id="task-item-expanded-33">
-                                
-                                <div>
-                                    <span class="slds-text-title">Description</span>
-                                    <p class="slds-p-top_x-small">Need to finalize proposals and brand details before
-                                        the meeting</p>
+                            <div class="slds-media__body">
+                                <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                                    <div
+                                        class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+
+                                        <h3 class="slds-truncate company"
+                                            title="Review proposals for EBC deck with larger team and have marketing review this">
+                                            <strong> {WorkExperience.fields.abhisol__Company__c.value} |
+                                                {WorkExperience.fields.abhisol__Location__c.value}</strong>
+                                        </h3>
+
+                                    </div>
+                                    <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                        <p class="slds-timeline__date date">
+                                            {WorkExperience.fields.abhisol__StartDate__c.displayValue} - <template
+                                                if:true={WorkExperience.fields.abhisol__CurrentCompany__c.value}>
+                                                Present
+                                            </template>
+                                            <template if:false={WorkExperience.fields.abhisol__CurrentCompany__c.value}>
+                                                {WorkExperience.fields.abhisol__EndDate__c.displayValue}
+                                            </template>
+                                        </p>
+
+                                    </div>
                                 </div>
-                            </article>
+                                <p class="slds-m-horizontal_xx-small role">
+                                    {WorkExperience.fields.abhisol__Role__c.value}
+                                </p>
+                                <article
+                                    class="slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small slds-p-around_medium"
+                                    id="task-item-expanded-33"><div>
+                                        <p class="slds-p-top_x-small description">
+                                            {WorkExperience.fields.abhisol__Description__c.value}
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            
+                </li>
+            </template>
+
+
         </ul>
     </div>
+    <!-- for checking purpose
+    <div>
+        <ul>
+            <template for:each={WorkExperiences} for:item='WorkExperience'>
+                <li key={WorkExperience.Id}>
+                    {WorkExperience.fields.abhisol__Company__c.value}
+               </li>
+            </template>
+        </ul>
+    </div>-->
 </template>

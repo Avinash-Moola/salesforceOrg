@@ -1,0 +1,74 @@
+<template>
+    <div class="slds-p-left_large slds-m-left_x-large">
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+            <input type=hidden name="oid" value="00D5i000005ndNF">
+            <input type=hidden name="retURL" value="https://avinashm-dev-ed.my.site.com/">
+
+            <!--  ----------------------------------------------------------------------  -->
+            <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+            <!--  these lines if you wish to test in debug mode.                          -->
+            <!--  <input type="hidden" name="debug" value=1>                              -->
+            <!--  <input type="hidden" name="debugEmail" value="avinash38m@gmail.com">    -->
+            <!--  ----------------------------------------------------------------------  -->
+            <div class="container ">
+                <div class="slds-grid slds-gutters slds-wrap ">
+                    <div class="slds-col slds-m-top_large">
+                        <span>
+                            <label for="first_name">First Name</label><br><input id="first_name" maxlength="40"
+                                name="first_name" size="20" type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                    <div class="slds-col  slds-m-top_large">
+                        <span>
+                            <label for="last_name">Last Name</label><br><input id="last_name" maxlength="80"
+                                name="last_name" size="20" type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                    <div class="slds-col  slds-m-top_large">
+                        <span>
+                            <label for="email">Email</label><br><input id="email" maxlength="80" name="email" size="20"
+                                type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                    <div class="slds-col  slds-m-top_large">
+                        <span>
+                            <label for="mobile">Mobile</label><br><input id="mobile" maxlength="40" name="mobile"
+                                size="20" type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                    <div class="slds-col  slds-m-top_large">
+                        <span>
+                            <label for="company">Company</label><br><input id="company" maxlength="40" name="company"
+                                size="20" type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                    <div class="slds-col  slds-m-top_large">
+                        <span>
+                            <label for="website">Website</label><br><input id="website" maxlength="80" name="website" size="20"
+                                type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                    <div class="slds-col  slds-m-top_large">
+                        <span>
+                            <label for="city">City</label><br><input id="city" maxlength="40" name="city" size="20"
+                                type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                    <div class="slds-col  slds-m-top_large">
+                        <span>
+                            <label for="country">Country</label><br><input id="country" maxlength="40" name="country"
+                                size="20" type="text" onchange={inputChangeHandler}/><br>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-align_absolute-center slds-m-top_large button">
+                    <!--<input type="submit" name="submit">-->
+<!--                    <template if:true={buttonFlag}> -->
+                        <button class="slds-button slds-button_brand " disabled type="submit" name="submit">Submit</button>
+                    <!-- </template> -->
+                </div>
+            </div>
+        </form>
+    </div>
+</template>

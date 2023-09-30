@@ -1,13 +1,8 @@
 import { LightningElement, track, wire, api } from 'lwc';
-import profilePic from '@salesforce/resourceUrl/aviProflePic';
+import profilePic from '@salesforce/resourceUrl/aviPic';
 import PortfolioAssets from '@salesforce/resourceUrl/PortfolioAssets';
-import { getFieldValue, getRecord } from 'lightning/uiRecordApi';
-import FULL_NAME from '@salesforce/schema/Portfolio__c.Name__c'
-import DESIGNATION from '@salesforce/schema/Portfolio__c.Designation__c'
-import COMPANY from '@salesforce/schema/Portfolio__c.Company__c'
-import CITY from '@salesforce/schema/Portfolio__c.City__c'
-import COUNTRY from '@salesforce/schema/Portfolio__c.Country__c'
 import ABOUT_ME_LABEL from '@salesforce/label/c.res_About_Description';
+import backgroungImg from '@salesforce/resourceUrl/backgroungImg';
 
 export default class LightningExampleVerticalNavAdvanced extends LightningElement {
     @track selectedItem = 'about_me';
@@ -16,14 +11,21 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
     educationFlag
     skillsFlag;
     certificationsFlag;
+    contactMeFlag;
+    modelComponentFlage = false;
 
-    // about me details
-    fullName;
-    designation;
-    company;
-    city;
-    country;
-    aboutMeFromLabel;
+
+    //* Model component ---------
+    modelComponentHandler(event){
+        this.modelComponentFlage = true
+    }
+
+    modelEventHandler(event){
+        this.modelComponentFlage = event.detail.modelflag;
+       //* console.log("From Parent "+ this.modelComponentFlage);
+    }
+
+    //* Model component ---------
 
     //* Static Resource 
     profilePic = profilePic;
@@ -32,6 +34,7 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
     github = `${PortfolioAssets}/Social/github.svg`
     twitter = PortfolioAssets + `/Social/twitter.svg`
     youtube = PortfolioAssets + `/Social/youtube.svg`
+    backgroungImg = backgroungImg;
 
     @api linkedinUrl
     @api trailheadUrl
@@ -49,22 +52,7 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
     //* object api name
     objectApiName = 'abhisol__Portfolio__c';
 
-    @wire(getRecord, { recordId:'$recordId', fields: [FULL_NAME, DESIGNATION, COMPANY, CITY, COUNTRY] })
-    portfolioHandler({data,error}){
-        if(data){
-             console.log(JSON.stringify(data))
-            // console.log(data.fields.abhisol__Name__c.value);
-            this.fullName = data.fields.abhisol__Name__c.value.toUpperCase();
-            this.designation = data.fields.abhisol__Designation__c.value;
-            this.company = data.fields.abhisol__Company__c.value;
-            this.city = data.fields.abhisol__City__c.value;
-            this.country = data.fields.abhisol__Country__c.value;
-
-        }
-        if(error){
-            console.error("error",error);
-        }
-    }
+    
 
 
 // controlling layout item templates 
@@ -76,6 +64,7 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
             this.educationFlag = false;
             this.skillsFlag = false;
             this.certificationsFlag = false;
+            this.contactMeFlag = false;
         }
         else if(selected == 'experience'){
             this.aboutMeFlag = false;
@@ -83,6 +72,7 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
             this.educationFlag = false;
             this.skillsFlag = false;
             this.certificationsFlag = false;
+            this.contactMeFlag = false;
         }
         else if(selected == 'education'){
             this.aboutMeFlag = false;
@@ -90,6 +80,7 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
             this.educationFlag = true;
             this.skillsFlag = false;
             this.certificationsFlag = false;
+            this.contactMeFlag = false;
         }
         else if(selected == 'skills'){
             this.aboutMeFlag = false;
@@ -97,6 +88,7 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
             this.educationFlag = false;
             this.skillsFlag = true;
             this.certificationsFlag = false;
+            this.contactMeFlag = false;
         }
         else if(selected == 'certifications'){
             this.aboutMeFlag = false;
@@ -104,6 +96,15 @@ export default class LightningExampleVerticalNavAdvanced extends LightningElemen
             this.educationFlag = false;
             this.skillsFlag = false;
             this.certificationsFlag = true;
+            this.contactMeFlag = false;
+        }
+        else if(selected == 'contactMe'){
+            this.aboutMeFlag = false;
+            this.experienceFlag = false;
+            this.educationFlag = false;
+            this.skillsFlag = false;
+            this.certificationsFlag = false;
+            this.contactMeFlag = true;
         }
     }
 

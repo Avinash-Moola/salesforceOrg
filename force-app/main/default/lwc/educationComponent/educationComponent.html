@@ -1,3 +1,13 @@
 <template>
-    <div> My Education</div>
+    <div class="slds-p-around_large slds-m-left_x-large">
+        <h1>EDUCATION QUALIFICATION</h1>
+    </div>
+    <div class="slds-p-around_x-large slds-m-left_large">
+        <lightning-datatable
+                key-field="Id"
+                data={tableData}
+                columns={columns}
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div>
 </template>
