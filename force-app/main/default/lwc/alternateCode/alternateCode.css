@@ -1,0 +1,8 @@
+/* Hide the label */
+.slds-hide-label label {
+    display: none;
+}
+
+.custom-button {
+    cursor: pointer; /* Change the cursor to a pointer (usually indicating a clickable element) */
+}

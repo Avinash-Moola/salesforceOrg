@@ -1,0 +1,11 @@
+.accordion{
+    --slds-c-accordion-heading-font-size:25px;
+}
+
+.box{
+    background-color: white;
+    max-width: fit-content;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 15px;
+}

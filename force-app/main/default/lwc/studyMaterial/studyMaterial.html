@@ -1,0 +1,31 @@
+<template>
+    <div class="outer_box">
+        <div class="scrollText slds-m-top_medium slds-m-left_medium slds-grid">
+            <a href="https://avinashm-dev-ed.my.site.com">
+                <lightning-icon 
+                  icon-name="standard:agent_home" 
+                  alternative-text="Home" 
+                  size="large" 
+                  title="Home"
+                  variant="inverse"
+                ></lightning-icon></a>
+            <marquee behavior="scroll" direction="left" class="slds-m-top_small slds-m-left_medium">
+                Kindly be aware that the answers provided here represents my personal interpretations. For definitive and precise answers, I strongly recommend you to conduct your research and refer to other online resources or <strong><a href="https://developer.salesforce.com/">Salesforce Developer Guide</a>  </strong>
+            </marquee>
+        </div>
+        <div class="slds-m-top_medium slds-m-left_medium">
+            <lightning-tabset class="slds-tabs_large">
+                <lightning-tab label="Interview Questions" >
+                    <c-interview-questions></c-interview-questions>
+                </lightning-tab>
+                <lightning-tab label="Trigger Scenarios" title="2nd tab extended title">
+                    <c-trigger-scenarios></c-trigger-scenarios>
+                </lightning-tab>
+                <lightning-tab label="Useful Links">
+                    Coming Soon.....!
+                    
+                </lightning-tab>
+            </lightning-tabset>
+        </div>
+    </div>
+</template>

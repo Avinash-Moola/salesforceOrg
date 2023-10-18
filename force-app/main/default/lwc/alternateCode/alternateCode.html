@@ -1,0 +1,23 @@
+<template>
+    <template if:true={alternateCode}>
+        <h1>Alternate Code</h1>
+        <div >
+            <template for:each={alternateCode} for:item='code'>
+                <div key={code.id} class="slds-box slds-m-left_large box">
+                    <lightning-card  variant="Narrow" class="card" >
+                        <pre class="codes">
+                            <code>
+                                <lightning-record-form
+                                        record-id={code.id}
+                                        object-api-name={objectApiName}
+                                        fields={fields}
+                                        >
+                                </lightning-record-form>
+                            </code>
+                        </pre>
+                    </lightning-card>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

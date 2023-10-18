@@ -1,0 +1,25 @@
+.accordion{
+    --slds-c-accordion-heading-font-size:25px;
+}
+
+article{
+    font-size: 20px;
+}
+
+.scrollText{
+    color:blue;
+}
+
+
+
+
+/*
+.outer_box{
+    background-color: #00071c;
+    color: white;
+    background-image: url('/resource/backgroungImg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+*/

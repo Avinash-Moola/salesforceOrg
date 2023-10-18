@@ -1,5 +1,7 @@
 import { LightningElement } from 'lwc';
 import skills from '@salesforce/resourceUrl/skills';
+import salesforcelogo from '@salesforce/resourceUrl/salesforcelogo';
+import vsCode from '@salesforce/resourceUrl/vsCode';
 
 export default class SkillsComponent extends LightningElement {
     html = skills +`/html.png`
@@ -9,6 +11,8 @@ export default class SkillsComponent extends LightningElement {
     pml = skills +`/pml.png`
     database = skills +`/database.png`
     sql = skills +`/sql.png`
+    salesforcelogo = salesforcelogo;
+    vsCode = vsCode;
 
 
     skillsList = [
@@ -41,6 +45,10 @@ export default class SkillsComponent extends LightningElement {
         {
             Id: 7,
             src: this.sql
+        },
+        {
+            Id: 8,
+            src: this.salesforcelogo
         },
       ];
     

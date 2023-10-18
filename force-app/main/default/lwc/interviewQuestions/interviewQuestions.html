@@ -1,0 +1,18 @@
+<template>
+    <div>
+        <lightning-accordion allow-multiple-sections-open class="accordion">
+        <template for:each={questionAndAnswers} for:item='question'>
+                    <lightning-accordion-section key={question.id} name={question.id} label={question.abhisol__Question__c}>
+                        <article class="slds-box slds-m-left_large">
+                            <lightning-record-view-form density="comfy" object-api-name={objectApiName} record-id={question.Id}>
+                                <lightning-output-field field-name="abhisol__Answer__c" variant = "label-hidden" class="outputText"></lightning-output-field>
+                            </lightning-record-view-form>
+                            <template if:true={question.abhisol__MoreInfo__c}>
+                                <a class="slds-button moreInfo" href={question.abhisol__MoreInfo__c} target="_blank"><lightning-icon icon-name="utility:new_window" size="x-small" alternative-text="More info" title="More Info"></lightning-icon>&nbsp;More Info...</a>
+                            </template>
+                        </article>
+                    </lightning-accordion-section>
+        </template>
+    </lightning-accordion>
+    </div>
+</template>

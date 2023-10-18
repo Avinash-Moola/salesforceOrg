@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <lightning-accordion allow-multiple-sections-open class="accordion">
+            <template for:each={Scenarios} for:item='scenario'>
+                <lightning-accordion-section key={scenario.id} name={scenario.id} label={scenario.abhisol__Scenario__c}>
+                    <template if:true={scenario.abhisol__Code__c}>
+                        <div class="slds-box slds-m-left_large box">
+                            <pre class="codes">
+                                    <code>
+                                        <lightning-record-view-form density="comfy" object-api-name={objectApiName} record-id={scenario.Id}>
+                                            <lightning-output-field field-name="abhisol__Code__c" variant = "label-hidden" class="outputText"></lightning-output-field>
+                                        </lightning-record-view-form>
+                                    </code>
+                                </pre>
+                        </div>
+                        <div>
+                            <lightning-icon icon-name='action:new' alternative-text='addCode' size='medium' title='Add Code' onclick={handleClick}></lightning-icon>
+                        </div>
+                    <!--    <div>
+                            <c-alternate-code record-id={scenario.Id}></c-alternate-code>
+                        </div>  -->
+                    </template>
+                    <template if:false={scenario.abhisol__Code__c}>
+                        <div class="slds-box slds-m-left_large box">
+                            Suggest your code snippet...!!!
+                        </div>
+                    </template>
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion>
+    </div>
+</template>

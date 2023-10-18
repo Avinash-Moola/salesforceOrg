@@ -42,6 +42,15 @@
     font-weight: bolder;
 }
 
+
+.clocks {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    font-size: 12px;
+  }
+
 /*
 .Container{
     background-color: #ffffff;

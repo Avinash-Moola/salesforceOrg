@@ -1,0 +1,14 @@
+.accordion{
+    --slds-c-accordion-heading-font-size:25px;
+}
+
+article{
+    font-size: 20px;
+    border-radius: 10px;
+    max-width: fit-content;
+}
+
+.moreInfo{
+    font-size: 15px;
+}
+

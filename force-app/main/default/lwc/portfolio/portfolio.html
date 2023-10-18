@@ -1,5 +1,5 @@
 <template>
-    <div class="outer_box" >
+    <div class="outer_box">
         <lightning-layout>
             <lightning-layout-item>
                 <div class="navBar" style="width: 220px;">
@@ -18,7 +18,7 @@
                             </lightning-vertical-navigation-item-icon>
 
                             <lightning-vertical-navigation-item-icon label="EDUCATION" name="education"
-                                icon-name="utility:knowledge_base">
+                                icon-name="utility:education">
                             </lightning-vertical-navigation-item-icon>
 
                             <lightning-vertical-navigation-item-icon label="SKILLS" name="skills"
@@ -30,13 +30,13 @@
                             </lightning-vertical-navigation-item-icon>
 
                             <lightning-vertical-navigation-item-icon label="CONTACT ME" name="contactMe"
-                                icon-name="utility:sender_email">
+                                icon-name="utility:email">
                             </lightning-vertical-navigation-item-icon>
 
                         </lightning-vertical-navigation-section>
 
                     </lightning-vertical-navigation>
-                    
+
                     <div class="socialMedia">
                         <template if:true={linkedinUrl}>
                             <a href={linkedinUrl} target="_blank"><img src={linkedin} alt="Linkedin"
@@ -47,8 +47,7 @@
                                     class="social-icon"></a>
                         </template>
                         <template if:true={githubUrl}>
-                            <a href={githubUrl} target="_blank"><img src={github} alt="Github"
-                                    class="social-icon"></a>
+                            <a href={githubUrl} target="_blank"><img src={github} alt="Github" class="social-icon"></a>
                         </template>
                         <template if:true={twitterUrl}>
                             <a href={twitterUrl} target="_blank"><img src={twitter} alt="Twitter"
@@ -59,18 +58,32 @@
                                     class="social-icon"></a>
                         </template>
                     </div>
+                <!--    <div>
+                        <lightning-button variant="base" label="STUDY MATERIAL"  icon-name="utility:knowledge_base" class="slds-m-left_xx-large slds-m-top_xx-large"><a href="https://avinashm-dev-ed.my.site.com/bmi-app" target="_blank"></a></lightning-button>
+                    </div> -->
                 </div>
             </lightning-layout-item>
             <lightning-layout-item class="Container" padding="around-medium">
-                <div >
+                <div>
                     <template if:true={aboutMeFlag}>
-                        <c-about-me-component record-id = {recordId} object-api-name = {objectApiName}></c-about-me-component>
-                     <c-about-me-from-label content={aboutMeFromLabel}></c-about-me-from-label>
-                    <!--    <c-carousel-c-omponent></c-carousel-c-omponent>  -->
-                    <c-contact-details-component record-id={recordId} object-api-name={objectApiName} ></c-contact-details-component>
-                    <button class="slds-button slds-button_brand slds-align_absolute-center" onclick={modelComponentHandler}>Get in Touch</button>
+                        <c-about-me-component record-id={recordId}
+                            object-api-name={objectApiName}></c-about-me-component>
+                        <c-about-me-from-label content={aboutMeFromLabel}></c-about-me-from-label>
+                        <!--    <c-carousel-c-omponent></c-carousel-c-omponent>  -->
+                        <div class="slds-m-top_xx-large">
+                            <c-contact-details-component record-id={recordId}
+                            object-api-name={objectApiName}></c-contact-details-component>
+                        </div>
+                        <button class="slds-button slds-button_brand slds-align_absolute-center"
+                            onclick={modelComponentHandler}>Get in Touch</button>
+                        <div class="slds-m-top_xx-large">
+                            <c-scrolling-text></c-scrolling-text>
+                        </div>
+                    <!--     <div class="clocks">
+                            <c-clocks-component></c-clocks-component>
+                        </div>    -->
                     </template>
-                    
+
                     <template if:true={experienceFlag}>
                         <c-experience-component record-id={recordId}></c-experience-component>
                     </template>
@@ -86,8 +99,8 @@
                     <template if:true={contactMeFlag}>
                         <div class="slds-p-around_large slds-m-left_x-large ">
                             <h1 class="getInTouch">CONTACT ME</h1>
-                        </div>                        
-                        <div class="slds-grid slds-gutters slds-wrap "  style="display: flex;">
+                        </div>
+                        <div class="slds-grid slds-gutters slds-wrap " style="display: flex;">
                             <div class="slds-col">
                                 <span>
                                     <c-get-in-touch></c-get-in-touch>
